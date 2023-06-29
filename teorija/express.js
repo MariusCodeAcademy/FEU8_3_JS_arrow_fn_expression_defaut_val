@@ -1,6 +1,8 @@
 'use strict';
 console.log('express.js file was loaded');
 
+let username = 'Mike';
+
 printHtml('Function expression!!!');
 
 // function declaration
@@ -33,4 +35,5 @@ console.log(suma);
 let avg = (a, b, c, d) => (a + b + c + d) / 4;
 
 let vid = avg(1, 2, 3, 4);
+vid = avg(10, 20, 3, 4);
 console.log('vid ===', vid);
