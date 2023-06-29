@@ -21,12 +21,12 @@ printHtml(
 
 function reikesDazu(ilgis, plotis, aukstis) {
   // patikrinti ar plotis yra skaicius
-  if (typeof plotis !== 'number') {
+  if (!checkIfNuber(plotis)) {
     console.log('plotis turetu buti skaicius');
     // nutraukiam funkcija del iskreiptu duomenu
     return;
   }
-
+  // panaudoti calcPlotas()
   let vienaSienaPlotas = ilgis * aukstis;
   console.log('vienaSienaPlotas ===', vienaSienaPlotas);
   let kitaSienaPlotas = plotis * aukstis;
@@ -41,3 +41,15 @@ function reikesDazu(ilgis, plotis, aukstis) {
 reikesDazu(kambarioIlgis, 'kambarioPlotis', kambarioAukstis);
 // reikesDazu(1, 1, 2);
 // reikesDazu(10, 10, 2);
+
+// Helper functions
+// check fn grazina daznau true arba false
+function checkIfNuber(value) {
+  if (typeof value === 'number') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// sukurti funkcija calcPlotas(len,width) grazina plotas
