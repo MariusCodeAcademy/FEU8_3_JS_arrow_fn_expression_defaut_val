@@ -29,3 +29,8 @@ console.log(suma);
 
 // su arrow fn sukurti fn kuri grazina 4 skaiciu vidurki
 // one line
+
+let avg = (a, b, c, d) => (a + b + c + d) / 4;
+
+let vid = avg(1, 2, 3, 4);
+console.log('vid ===', vid);
