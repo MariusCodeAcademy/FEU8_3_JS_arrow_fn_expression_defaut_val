@@ -9,6 +9,7 @@
    Parašykite funkciją, kuri priima du tekstus kaip argumentus ir grąžina juos sujungtus į vieną eilutę.
 5. Sukurti funkciją, kuri padidina tik pirmą žodžio raidę. vienas argumentas. rezultatas gazinamas.
 6. Parašykite funkciją, kuri priima argumentą ir patikrina, ar jis yra tekstas ir ar jo ilgis yra didesnis nei 5.
+
    6.1 ar jo ilgis didesnis uz antra argumenta checkText('aha', 4)
 
 7. Funkcija, kuri tikrina ar skaičius yra nurodyto diapazono viduje
