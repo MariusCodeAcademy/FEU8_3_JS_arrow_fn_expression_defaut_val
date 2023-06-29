@@ -40,8 +40,10 @@ function reikesDazu(ilgis, plotis, aukstis, dazuStoris = 0.5) {
 
   let dazuLitrais = kubMToLitrai(dazuTurisKubM);
   console.log('jums reikes', dazuLitrais, 'litru dazu');
+  return dazuLitrais;
 }
-reikesDazu(kambarioIlgis, kambarioPlotis, kambarioAukstis, 2);
+let rez = reikesDazu(kambarioIlgis, kambarioPlotis, kambarioAukstis, 2);
+printHtml(`jums reikes ${rez} litru dazu`);
 // reikesDazu(1, 1, 2);
 // reikesDazu(10, 10, 2);
 
