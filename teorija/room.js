@@ -3,8 +3,8 @@ console.log('room.js file was loaded');
 
 printHtml('Room measure');
 
-let kambarioIlgis = 5;
-let kambarioPlotis = 10;
+let kambarioIlgis = 3;
+let kambarioPlotis = 5;
 let kambarioAukstis = 3;
 
 printHtml(
@@ -19,7 +19,7 @@ printHtml(
 // Sienu plotas * 1mm = rezultatas
 // kiekvienos sienos plota = ilgis * aukstis * 4
 
-function reikesDazu(ilgis, plotis, aukstis) {
+function reikesDazu(ilgis, plotis, aukstis, dazuStoris = 0.5) {
   // patikrinti ar plotis yra skaicius
   if (!checkIfNuber(plotis)) {
     console.log('plotis turetu buti skaicius');
@@ -27,18 +27,21 @@ function reikesDazu(ilgis, plotis, aukstis) {
     return;
   }
   // panaudoti calcPlotas()
-  let vienaSienaPlotas = ilgis * aukstis;
-  console.log('vienaSienaPlotas ===', vienaSienaPlotas);
-  let kitaSienaPlotas = plotis * aukstis;
-  console.log('kitaSienaPlotas ===', kitaSienaPlotas);
+  let siena1Plotas = calcPlotas(plotis, aukstis);
+  let siena2Plotas = calcPlotas(plotis, aukstis);
+  let siena3Plotas = calcPlotas(ilgis, aukstis);
+  let siena4Plotas = calcPlotas(ilgis, aukstis);
+
   let visuSienuPlotas =
-    vienaSienaPlotas + vienaSienaPlotas + kitaSienaPlotas + kitaSienaPlotas;
+    siena1Plotas + siena2Plotas + siena3Plotas + siena4Plotas;
   console.log('visuSienuPlotas ===', visuSienuPlotas);
 
-  let dazuTuris = visuSienuPlotas * 1e-3;
-  console.log('dazuTuris ===', dazuTuris);
+  let dazuTurisKubM = visuSienuPlotas * (dazuStoris / 1000);
+
+  let dazuLitrais = kubMToLitrai(dazuTurisKubM);
+  console.log('jums reikes', dazuLitrais, 'litru dazu');
 }
-reikesDazu(kambarioIlgis, 'kambarioPlotis', kambarioAukstis);
+reikesDazu(kambarioIlgis, kambarioPlotis, kambarioAukstis, 2);
 // reikesDazu(1, 1, 2);
 // reikesDazu(10, 10, 2);
 
@@ -53,3 +56,13 @@ function checkIfNuber(value) {
 }
 
 // sukurti funkcija calcPlotas(len,width) grazina plotas
+function calcPlotas(length, width) {
+  return length * width;
+}
+let calcPlotasA = (length, width) => length * width;
+
+// console.log('calcPlotas(10, 5) ===', calcPlotas(10, 5));
+
+function kubMToLitrai(kubM) {
+  return kubM * 1000;
+}
