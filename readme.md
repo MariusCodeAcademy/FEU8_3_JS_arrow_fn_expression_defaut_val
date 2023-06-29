@@ -31,7 +31,9 @@ console.log(arYraReiksme('Labas, pasauli!', 'pasauli')); // Output: true
 ```
 
 9. Perziureti stringo metodus is https://www.w3schools.com/js/js_string_methods.asp
+
    9.1 panaudoti viena is metodu su sita verte ' Mike ' kad gauti "Mike"
+
    9.2 panaudoti viena is metodu kad is "tekstas yra ne tuščias bet" gauti zodeli 'bet'
 
 10. Atskirkite dalį teksto naudojant slice() metodą
