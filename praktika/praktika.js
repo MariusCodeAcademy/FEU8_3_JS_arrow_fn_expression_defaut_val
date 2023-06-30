@@ -64,11 +64,13 @@ function isWordInText(text, word) {
   }
   // patikrinti ar text yra word zodis
   // console.log('text.includes(word) ===', text.includes(word));
+
   if (text.includes(word)) {
     return true;
   } else {
     return false;
   }
+  // return text.includes(word);
 }
 let rez1 = isWordInText('Sveiki siandien yra Penktadienis!', 'ian'); // => true
 let rez2 = isWordInText('Sveiki siandien yra Penktadienis!', 'bus'); // => false
