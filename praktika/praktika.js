@@ -45,4 +45,33 @@ let last = getLastWord('Sveiki siandien yra Ketvirtadinis!');
 console.log('last ===', last);
 // 9.2 panaudoti viena is metodu kad is "tekstas yra ne tuščias bet" gauti zodeli 'bet'
 
-// 8. Parašykite JavaScript funkciją, kuri priima du argumentus: tekstą ir reikšmę. Funkcija turi patikrinti, ar tekstas yra ne tuščias ir ar jame yra nurodyta reikšmė.
+// 8. Parašykite JavaScript funkciją, kuri priima du
+// argumentus: tekstą ir reikšmę. Funkcija turi patikrinti,
+// ar tekstas yra ne tuščias ir ar jame yra nurodyta reikšmė.
+
+// psiaudo kodas
+/**
+ *
+ * @param {string} text
+ * @param {string} word
+ * @returns
+ */
+function isWordInText(text, word) {
+  // patikrinti ar text yra string tipo
+  if (typeof text !== 'string') {
+    console.log('ne string');
+    return;
+  }
+  // patikrinti ar text yra word zodis
+  // console.log('text.includes(word) ===', text.includes(word));
+  if (text.includes(word)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+let rez1 = isWordInText('Sveiki siandien yra Penktadienis!', 'ian'); // => true
+let rez2 = isWordInText('Sveiki siandien yra Penktadienis!', 'bus'); // => false
+// isWordInText(5, 'bus'); // => false
+console.log('rez1 ===', rez1);
+console.log('rez2 ===', rez2);
